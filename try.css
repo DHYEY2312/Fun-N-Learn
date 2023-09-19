@@ -1,0 +1,179 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:300");
+
+body{
+  background-color: #1e1e1e;
+}
+ 
+  .gradient-border {
+    --border-width: 3px;
+    
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 280px;
+    width: 80px;
+    height: 20px;
+    font-family: Lato, sans-serif;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    background: #1e1e1e;
+    border-radius: var(--border-width);
+    padding-left: 4px;
+  
+    &::after {
+      position: absolute;
+      content: "";
+      top: calc(-1 * var(--border-width));
+      left: calc(-1 * var(--border-width));
+      z-index: -1;
+      width: calc(100% + var(--border-width) * 2);
+      height: calc(100% + var(--border-width) * 2);
+      background: linear-gradient(
+        30deg,
+        hsl(224, 85%, 66%),
+        hsl(269, 85%, 66%),
+        hsl(314, 85%, 66%),
+        hsl(359, 85%, 66%),
+        hsl(44, 85%, 66%),
+        hsl(89, 85%, 66%),
+        hsl(134, 85%, 66%),
+        hsl(179, 85%, 66%)
+      );
+      background-size: 300% 300%;
+      background-position: 0 50%;
+      border-radius: calc(2 * var(--border-width));
+      animation: moveGradient 4s alternate infinite;
+    }
+  }
+  
+  @keyframes moveGradient {
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+  p{
+    bottom: 80px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    left: 180px;
+    font-size: larger;
+    color: #ffffff;
+  }
+  .img{
+    /* display: flex;
+    position: sticky; */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    /* margin-bottom: 50px; */
+  }
+  .nameadjust{
+    position: absolute;
+    display: inline;
+    padding-left: 30px;
+    font-size: 40px;
+    color: #ffffff;
+  }
+  .name{
+    position: absolute;
+    display: inline;
+    padding-left: 30px;
+    font-size: 40px;
+    color: #ffffff;
+  }
+
+
+
+  .highlight{
+    color: #ffffff;
+    left: 10px;
+    position: relative;
+    display: flex;
+  }
+
+
+
+  .highlightimg > img{
+    left: 20px;
+    border-radius: 50px;
+    height: 100px;
+    width: 100px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+
+
+
+
+  .visit{
+    --border-width:3px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    width: 90px;
+    background-size: 200px;
+    left: 180px;
+    border-radius: calc(2 * var(--border-width));
+    background-color: #0c5ebb;
+  }
+
+
+
+
+
+
+  .group {
+    --g: 8px;   /* the gap */
+    --s: 400px; /* the size */
+    padding-left: 120px;
+    max-width: 100%
+;
+    display: grid;
+    border-radius: 50%;
+  }
+  .group > img {
+    grid-area: 1/1;
+    width: 400px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+    transform: translate(var(--_x,0),var(--_y,0));
+    cursor: pointer;
+    z-index: 0;
+    transition: .3s, z-index 0s .3s;
+  }
+  .group img:hover {
+    --_i: 1;
+    z-index: 1;
+    transition: transform .2s, clip-path .3s .2s, z-index 0s;
+  }
+  .group:hover img {
+    transform: translate(0,0);
+  }
+  .group > img:nth-child(1) {
+    clip-path: polygon(50% 50%,calc(50%*var(--_i,0)) calc(120%*var(--_i,0)),0 calc(100%*var(--_i,0)),0 0,100% 0,100% calc(100%*var(--_i,0)),calc(100% - 50%*var(--_i,0)) calc(120%*var(--_i,0)));
+    --_y: calc(-1*var(--g))
+  }
+  .group > img:nth-child(2) {
+    clip-path: polygon(50% 50%,calc(100% - 120%*var(--_i,0)) calc(50%*var(--_i,0)),calc(100% - 100%*var(--_i,0)) 0,100% 0,100% 100%,calc(100% - 100%*var(--_i,0)) 100%,calc(100% - 120%*var(--_i,0)) calc(100% - 50%*var(--_i,0)));
+    --_x: var(--g)
+  }
+  .group > img:nth-child(3) {
+    clip-path: polygon(50% 50%,calc(100% - 50%*var(--_i,0)) calc(100% - 120%*var(--_i,0)),100% calc(100% - 120%*var(--_i,0)),100% 100%,0 100%,0 calc(100% - 100%*var(--_i,0)),calc(50%*var(--_i,0)) calc(100% - 120%*var(--_i,0)));
+    --_y: var(--g)
+  }
+  .group > img:nth-child(4) {
+    clip-path: polygon(50% 50%,calc(120%*var(--_i,0)) calc(50%*var(--_i,0)),calc(100%*var(--_i,0)) 0,0 0,0 100%,calc(100%*var(--_i,0)) 100%,calc(120%*var(--_i,0)) calc(100% - 50%*var(--_i,0)));
+    --_x: calc(-1*var(--g))
+  }
