@@ -138,7 +138,24 @@ body{
   border-radius: 100px;
   width: 200px;
   height: 200px;
-  background: linear-gradient(145deg, #d4cece, #fbf5f5);
+  background: linear-gradient(145deg, #000000, #000000);
   box-shadow:  5px 5px 10px #581b1b,
                -5px -5px 10px #000000;
+
+  border-radius: 100%;
+  transition: height 0.5s;
+  transition: width 0.5s;
+  transition: border-radius 1s, box-shadow 1s;
+  line-height: 75px;
+  text-align: center;
+  display: inline-block;
+  margin: 0;
+  box-shadow: 0;
+}
+
+.group > img:hover{
+  border-radius: 0%;
+  box-shadow: 12px 12px 10px -4px #000000,
+  -2px -2px 10px 1px #581b1b;
+  transition: border-radius 1s, box-shadow 0.2s;
 }
